@@ -3,7 +3,6 @@
 <head>
     <title>Cruise AT19 Data and Documentation</title>
     <script>
-        // Function to toggle the visibility of sub-lists
         function toggleVisibility(list) {
             var subList = list.getElementsByTagName("ul")[0];
             if (subList.style.display === "none") {
@@ -11,6 +10,12 @@
             } else {
                 subList.style.display = "none";
             }
+        }
+        function updateFileCount(list) {
+            var subList = list.getElementsByTagName("ul")[0];
+            var fileLinks = subList.getElementsByTagName("a");
+            var fileCount = fileLinks.length;
+            list.getElementsByTagName("a")[0].innerHTML += " (" + fileCount + ")";
         }
     </script>
 </head>
@@ -20,13 +25,13 @@
         <li><a href="https://dlacruisedata.whoi.edu/AT/cruise/AT19/CRUISE_ID">Cruise ID</a></li>
         <li>
             <a href="#" onclick="toggleVisibility(this.parentNode);">Disk Information</a>
-                <ul style="display: none;">
+                <ul style="display: none;" onload="updateFileCount(this.parentNode)">
                     <li><a href="https://dlacruisedata.whoi.edu/AT/cruise/AT19/Diskinfo.txt">Diskinfo.txt</a></li>
                 </ul>
         </li>
         <li>
             <a href="#" onclick="toggleVisibility(this.parentNode);">Documentation</a>
-                <ul style="display: none;">
+                <ul style="display: none;" onload="updateFileCount(this.parentNode)">
                     <li><a href="https://dlacruisedata.whoi.edu/AT/cruise/AT19/docs/METsensorRundown.xls">METsensorRundown.xls</a></li>
                     <li><a href="https://dlacruisedata.whoi.edu/AT/cruise/AT19/docs/adcp_files.txt">adcp_files.txt</a></li>
                 </ul>
