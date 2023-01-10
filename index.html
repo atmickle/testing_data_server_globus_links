@@ -1,28 +1,37 @@
-</html>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Cruise AT19 Data and Documentation</title>
+    <script>
+        // Function to toggle the visibility of sub-lists
+        function toggleVisibility(list) {
+            var subList = list.getElementsByTagName("ul")[0];
+            if (subList.style.display === "none") {
+                subList.style.display = "block";
+            } else {
+                subList.style.display = "none";
+            }
+        }
+    </script>
 </head>
 <body>
     <h1>Cruise AT19 Data and Documentation</h1>
     <ul>
         <li><a href="https://dlacruisedata.whoi.edu/AT/cruise/AT19/CRUISE_ID">Cruise ID</a></li>
         <li>
-            <a href="https://dlacruisedata.whoi.edu/AT/cruise/AT19/">Disk Information</a>
-                <ul>
+            <a href="#" onclick="toggleVisibility(this.parentNode);">Disk Information</a>
+                <ul style="display: none;">
                     <li><a href="https://dlacruisedata.whoi.edu/AT/cruise/AT19/Diskinfo.txt">Diskinfo.txt</a></li>
                 </ul>
         </li>
         <li>
-            <a href="https://dlacruisedata.whoi.edu/AT/cruise/AT19/docs/">Documentation</a>
-                <ul>
+            <a href="#" onclick="toggleVisibility(this.parentNode);">Documentation</a>
+                <ul style="display: none;">
                     <li><a href="https://dlacruisedata.whoi.edu/AT/cruise/AT19/docs/METsensorRundown.xls">METsensorRundown.xls</a></li>
                     <li><a href="https://dlacruisedata.whoi.edu/AT/cruise/AT19/docs/adcp_files.txt">adcp_files.txt</a></li>
                 </ul>
         </li>
     </ul>
   <a href="https://g-64b294.3e1766.69a6.data.globus.org/doc/adcp_files.txt">/doc/adcp_files.txt</a>
-
 </body>
 </html>
